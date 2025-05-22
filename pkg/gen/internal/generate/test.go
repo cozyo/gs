@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cozyo/gs/cmd/gen/internal/parser"
+	"github.com/cozyo/gs/pkg/gen/internal/parser"
 )
 
 // GetTestParamInTmpl return param list

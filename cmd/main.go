@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/cozyo/gs/cmd/gen"
+	"github.com/cozyo/gs/pkg/gen"
 	"os"
 )
 

@@ -3,7 +3,7 @@ package gen
 import (
 	"fmt"
 
-	"github.com/cozyo/gs/cmd/gen/field"
+	"github.com/cozyo/gs/pkg/gen/field"
 	"gorm.io/datatypes"
 	"gorm.io/gorm/clause"
 )

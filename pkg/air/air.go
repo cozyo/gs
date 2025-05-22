@@ -3,7 +3,7 @@ package air
 import (
 	"flag"
 	"fmt"
-	"github.com/cozyo/gs/cmd/air/runner"
+	"github.com/cozyo/gs/pkg/air/runner"
 	"log"
 	"os"
 	"os/signal"

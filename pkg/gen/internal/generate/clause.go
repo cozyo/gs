@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/cozyo/gs/cmd/gen/internal/model"
+	"github.com/cozyo/gs/pkg/gen/internal/model"
 )
 
 // Clause a symbol of clause, it can be sql condition clause, if clause, where clause, set clause and else clause

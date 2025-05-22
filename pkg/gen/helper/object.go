@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/cozyo/gs/cmd/gen/field"
+	"github.com/cozyo/gs/pkg/gen/field"
 )
 
 // Object an object interface

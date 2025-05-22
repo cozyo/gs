@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/cozyo/gs/cmd/gen/field"
+	"github.com/cozyo/gs/pkg/gen/field"
 	"gorm.io/gorm"
 )
 

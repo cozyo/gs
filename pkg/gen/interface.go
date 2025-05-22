@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/schema"
 
-	"github.com/cozyo/gs/cmd/gen/field"
+	"github.com/cozyo/gs/pkg/gen/field"
 )
 
 type (

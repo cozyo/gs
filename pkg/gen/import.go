@@ -12,9 +12,9 @@ var (
 		"gorm.io/gorm/schema",
 		"gorm.io/gorm/clause",
 		"",
-		"github.com/cozyo/gs/cmd/gen",
-		"github.com/cozyo/gs/cmd/gen/field",
-		"github.com/cozyo/gs/cmd/gen/helper",
+		"github.com/cozyo/gs/pkg/gen",
+		"github.com/cozyo/gs/pkg/gen/field",
+		"github.com/cozyo/gs/pkg/gen/helper",
 		"",
 		"gorm.io/plugin/dbresolver",
 	)

@@ -19,12 +19,12 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"github.com/cozyo/gs/cmd/gen/helper"
-	"github.com/cozyo/gs/cmd/gen/internal/generate"
-	"github.com/cozyo/gs/cmd/gen/internal/model"
-	"github.com/cozyo/gs/cmd/gen/internal/parser"
-	tmpl "github.com/cozyo/gs/cmd/gen/internal/template"
-	"github.com/cozyo/gs/cmd/gen/internal/utils/pools"
+	"github.com/cozyo/gs/pkg/gen/helper"
+	"github.com/cozyo/gs/pkg/gen/internal/generate"
+	"github.com/cozyo/gs/pkg/gen/internal/model"
+	"github.com/cozyo/gs/pkg/gen/internal/parser"
+	tmpl "github.com/cozyo/gs/pkg/gen/internal/template"
+	"github.com/cozyo/gs/pkg/gen/internal/utils/pools"
 )
 
 // T generic type

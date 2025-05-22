@@ -2,8 +2,8 @@ package dispatcher
 
 import (
 	"fmt"
-	"github.com/cozyo/gs/cmd/air"
-	"github.com/cozyo/gs/cmd/gen"
+	"github.com/cozyo/gs/pkg/air"
+	"github.com/cozyo/gs/pkg/gen"
 	"os"
 )
 

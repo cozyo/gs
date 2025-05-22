@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cozyo/gs/cmd/gen/internal/model"
-	"github.com/cozyo/gs/cmd/gen/internal/parser"
+	"github.com/cozyo/gs/pkg/gen/internal/model"
+	"github.com/cozyo/gs/pkg/gen/internal/parser"
 )
 
 // InterfaceMethod interface's method

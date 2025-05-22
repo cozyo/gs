@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cozyo/gs/cmd/gen/internal/model"
+	"github.com/cozyo/gs/pkg/gen/internal/model"
 )
 
 // NewSection create and initialize Sections

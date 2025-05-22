@@ -12,8 +12,8 @@ import (
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/schema"
 
-	"github.com/cozyo/gs/cmd/gen/field"
-	"github.com/cozyo/gs/cmd/gen/helper"
+	"github.com/cozyo/gs/pkg/gen/field"
+	"github.com/cozyo/gs/pkg/gen/helper"
 )
 
 // ResultInfo query/execute info
