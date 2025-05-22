@@ -10,10 +10,10 @@ import (
 	"gorm.io/gorm/schema"
 	"gorm.io/gorm/utils/tests"
 
-	"gorm.io/gen/field"
-	"gorm.io/gen/helper"
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
+	"github.com/cozyo/gs/cmd/gen/field"
+	"github.com/cozyo/gs/cmd/gen/helper"
+	"github.com/cozyo/gs/cmd/gen/internal/model"
+	"github.com/cozyo/gs/cmd/gen/internal/parser"
 )
 
 // GetQueryStructMeta generate db model by table name

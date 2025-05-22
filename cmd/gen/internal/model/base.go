@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"gorm.io/gen/field"
+	"github.com/cozyo/gs/cmd/gen/field"
 )
 
 const (

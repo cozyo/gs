@@ -1,4 +1,4 @@
-module gorm.io/gen/tools/gentool
+module github.com/cozyo/gs/cmd/gen/tools/gentool
 
 go 1.19
 
@@ -9,7 +9,7 @@ require (
 	gorm.io/driver/postgres v1.5.7
 	gorm.io/driver/sqlite v1.5.5
 	gorm.io/driver/sqlserver v1.5.3
-	gorm.io/gen v0.3.26
+	github.com/cozyo/gs/cmd/gen v0.3.26
 	gorm.io/gorm v1.25.9
 )
 
