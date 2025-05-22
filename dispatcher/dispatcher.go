@@ -2,16 +2,27 @@ package dispatcher
 
 import (
 	"fmt"
-	"github.com/cozyo/gs/cmd/air"
+	"github.com/cozyo/gs/pkg/air"
+	"github.com/cozyo/gs/pkg/gen"
+	"os"
 )
 
-func runAir(args []string) {
-	opts := air.Options{
-		ConfigPath: "",    // 可从 args 解析
-		DebugMode:  false, // 可从 args 解析
-		ShowSplash: true,
-	}
+func RunAir(args []string) {
+	opts := air.ParseFlag(args)
 	if err := air.Run(opts); err != nil {
-		fmt.Println("Air run failed:", err)
+		fmt.Fprintf(os.Stderr, "Error running air: %v\n", err)
+		os.Exit(1)
+	}
+}
+
+func RunGen(args []string) {
+	tableName := "page" // 默认值
+	if len(args) > 0 {
+		tableName = args[0]
+	}
+	opts := gen.ParseFlag(args)
+	if err := gen.Run(opts, tableName); err != nil {
+		fmt.Fprintf(os.Stderr, "Error running air: %v\n", err)
+		os.Exit(1)
 	}
 }
