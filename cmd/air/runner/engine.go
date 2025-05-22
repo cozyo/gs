@@ -128,12 +128,12 @@ func (e *Engine) watching(root string) error {
 		}
 		// exclude tmp dir
 		if e.isTmpDir(path) {
-			e.watcherLog("!exclude %s", e.config.rel(path))
+			//e.watcherLog("!exclude %s", e.config.rel(path))
 			return filepath.SkipDir
 		}
 		// exclude testdata dir
 		if e.isTestDataDir(path) {
-			e.watcherLog("!exclude %s", e.config.rel(path))
+			//e.watcherLog("!exclude %s", e.config.rel(path))
 			return filepath.SkipDir
 		}
 		// exclude hidden directories like .git, .idea, etc.
@@ -142,12 +142,12 @@ func (e *Engine) watching(root string) error {
 		}
 		// exclude user specified directories
 		if e.isExcludeDir(path) {
-			e.watcherLog("!exclude %s", e.config.rel(path))
+			//e.watcherLog("!exclude %s", e.config.rel(path))
 			return filepath.SkipDir
 		}
 		isIn, walkDir := e.checkIncludeDir(path)
 		if !walkDir {
-			e.watcherLog("!exclude %s", e.config.rel(path))
+			//e.watcherLog("!exclude %s", e.config.rel(path))
 			return filepath.SkipDir
 		}
 		if isIn {
@@ -282,7 +282,7 @@ func (e *Engine) watchNewDir(dir string, removeDir bool) {
 		return
 	}
 	if isHiddenDirectory(dir) || e.isExcludeDir(dir) {
-		e.watcherLog("!exclude %s", e.config.rel(dir))
+		//e.watcherLog("!exclude %s", e.config.rel(dir))
 		return
 	}
 	if removeDir {

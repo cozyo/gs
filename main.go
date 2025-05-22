@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/cozyo/gs/dispatcher"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
 func main() {
+
 	var rootCmd = &cobra.Command{
 		Use:   "gs",
 		Short: "GS CLI Tool - Hot reload and code generation",
@@ -19,7 +21,7 @@ func main() {
 		Short: "Hot reload and run the project",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("Running with hot reload...")
-			// 在这里调用你实现的热重载逻辑（watcher/build/run）
+			dispatcher.RunAir(args)
 		},
 	}
 
