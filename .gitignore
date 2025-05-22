@@ -1,0 +1,10 @@
+/tmp
+/log
+.air.toml
+/.fleet
+/.idea
+/.vscode
+/.scribe
+/model
+/bin
+/tools
