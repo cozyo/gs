@@ -24,14 +24,6 @@ func helpMessage() {
 	flag.PrintDefaults()
 }
 
-//func init() {
-//	// 不再使用全局变量，直接初始化Options结构体
-//	opts := parseFlag(os.Args[1:])
-//	if err := Run(opts); err != nil {
-//		log.Fatal(err)
-//	}
-//}
-
 func ParseFlag(args []string) Options {
 	flag.Usage = helpMessage
 
