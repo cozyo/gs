@@ -4,7 +4,7 @@ GO_EXEC_BIN_NAME = gs.exe
 
 all: build
 
-build:
+build: clean
 	go build -o E:\go\workspace\bin\${GO_EXEC_BIN_NAME} .
 
 clean:

@@ -28,15 +28,16 @@ func main() {
 	// gs gen model / handler / service
 	var genCmd = &cobra.Command{
 		Use:   "gen",
-		Short: "Generate code (model/handler/service)",
+		Short: "Generate code (model/entity)",
 	}
 
 	var genModelCmd = &cobra.Command{
 		Use:   "model",
 		Short: "Generate model code",
+		Args:  cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("Generating model...")
-			// 实现 model 生成逻辑
+			dispatcher.RunGen(args)
 		},
 	}
 

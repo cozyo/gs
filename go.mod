@@ -11,7 +11,9 @@ require (
 	github.com/pelletier/go-toml v1.9.5
 	github.com/spf13/cobra v1.9.1
 	golang.org/x/tools v0.32.0
+	gopkg.in/yaml.v3 v3.0.1
 	gorm.io/datatypes v1.2.4
+	gorm.io/driver/mysql v1.5.7
 	gorm.io/gorm v1.25.12
 	gorm.io/hints v1.1.0
 	gorm.io/plugin/dbresolver v1.5.3
@@ -35,8 +37,8 @@ require (
 	github.com/spf13/pflag v1.0.6 // indirect
 	github.com/tdewolff/parse/v2 v2.7.15 // indirect
 	golang.org/x/mod v0.24.0 // indirect
+	golang.org/x/sync v0.13.0 // indirect
 	golang.org/x/sys v0.32.0 // indirect
 	golang.org/x/text v0.24.0 // indirect
 	google.golang.org/protobuf v1.36.5 // indirect
-	gorm.io/driver/mysql v1.5.7 // indirect
 )

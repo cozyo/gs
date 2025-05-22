@@ -287,6 +287,18 @@ func (g *Generator) Execute() {
 	g.info("Generate code done.")
 }
 
+// Execute generate code to output path
+func (g *Generator) ExecuteModel() {
+	g.info("Start generating code.")
+
+	if err := g.generateModelFile(); err != nil {
+		g.db.Logger.Error(context.Background(), "generate model struct fail: %s", err)
+		panic("generate model struct fail")
+	}
+
+	g.info("Generate code done.")
+}
+
 // info logger
 func (g *Generator) info(logInfos ...string) {
 	for _, l := range logInfos {
@@ -437,8 +449,8 @@ func (g *Generator) generateSingleQueryFile(data *genInfo) (err error) {
 		return err
 	}
 
-	defer g.info(fmt.Sprintf("generate query file: %s%s%s.gen.go", g.OutPath, string(os.PathSeparator), data.FileName))
-	return g.output(fmt.Sprintf("%s%s%s.gen.go", g.OutPath, string(os.PathSeparator), data.FileName), buf.Bytes())
+	defer g.info(fmt.Sprintf("generate query file: %s%s%s.go", g.OutPath, string(os.PathSeparator), data.FileName))
+	return g.output(fmt.Sprintf("%s%s%s.go", g.OutPath, string(os.PathSeparator), data.FileName), buf.Bytes())
 }
 
 // generateQueryUnitTestFile generate unit test file for query
@@ -513,7 +525,7 @@ func (g *Generator) generateModelFile() error {
 				}
 			}
 
-			modelFile := modelOutPath + data.FileName + ".gen.go"
+			modelFile := modelOutPath + data.FileName + ".go"
 			err = g.output(modelFile, buf.Bytes())
 			if err != nil {
 				errChan <- err
@@ -539,7 +551,7 @@ func (g *Generator) getModelOutputPath() (outPath string, err error) {
 			return "", fmt.Errorf("cannot parse model pkg path: %w", err)
 		}
 	} else {
-		outPath = filepath.Join(filepath.Dir(g.OutPath), g.ModelPkgPath)
+		outPath = filepath.Join(g.OutPath, g.ModelPkgPath)
 	}
 	return outPath + string(os.PathSeparator), nil
 }

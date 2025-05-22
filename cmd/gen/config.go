@@ -31,7 +31,7 @@ type Config struct {
 	db *gorm.DB // db connection
 
 	OutPath      string // query code path
-	OutFile      string // query code file name, default: gen.go
+	OutFile      string // query code file name, default: .go
 	ModelPkgPath string // generated model code's package name
 	WithUnitTest bool   // generate unit test for query code
 
@@ -152,7 +152,7 @@ func (cfg *Config) Revise() (err error) {
 		cfg.OutPath = fmt.Sprintf(".%squery%s", string(os.PathSeparator), string(os.PathSeparator))
 	}
 	if cfg.OutFile == "" {
-		cfg.OutFile = filepath.Join(cfg.OutPath, "gen.go")
+		cfg.OutFile = filepath.Join(cfg.OutPath, ".go")
 	} else if !strings.Contains(cfg.OutFile, string(os.PathSeparator)) {
 		cfg.OutFile = filepath.Join(cfg.OutPath, cfg.OutFile)
 	}
