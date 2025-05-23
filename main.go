@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/cozyo/gs/dispatcher"
+	"github.com/cozyo/gs/internal/dispatcher"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -25,52 +25,42 @@ func main() {
 		},
 	}
 
-	// gs gen model / handler / service
+	// gs gen model / ctrl / service
 	var genCmd = &cobra.Command{
-		Use:   "gen",
-		Short: "Generate code (model/entity)",
+		Use: "gen",
+		Short: "The \"gen\" command is designed for multiple generating purposes.\n" +
+			"It's currently supporting generating go files for ORM models, protobuf and protobuf entity files.\n" +
+			"Please use \"gf gen model -h\" for specified type help.",
 	}
 
 	var genModelCmd = &cobra.Command{
-		Use:   "model",
-		Short: "Generate model code",
-		Args:  cobra.MaximumNArgs(1),
+		Use:     "model",
+		Short:   "automatically generate go files for (model/entity)",
+		Args:    cobra.MaximumNArgs(1),
+		Example: "gs gen model page",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("Generating model...")
 			dispatcher.RunGen(args)
 		},
 	}
 
-	var genHandlerCmd = &cobra.Command{
-		Use:   "handler",
-		Short: "Generate handler code",
+	var genCtrlCmd = &cobra.Command{
+		Use:     "ctrl",
+		Short:   "parse api definitions to generate controller/sdk go files",
+		Example: "gs gen ctrl page",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Generating handler...")
-			// 实现 handler 生成逻辑
+			fmt.Println("Generating ctrl...")
+			// 实现 ctrl 生成逻辑
 		},
 	}
 
 	var genServiceCmd = &cobra.Command{
-		Use:   "service",
-		Short: "Generate service code",
+		Use:     "service",
+		Short:   "parse struct and associated functions from packages to generate service go file",
+		Example: "gs gen service page",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("Generating service...")
 			// 实现 service 生成逻辑
-		},
-	}
-
-	// gs make command
-	var makeCmd = &cobra.Command{
-		Use:   "make",
-		Short: "Make scaffold files",
-	}
-
-	var makeCommandCmd = &cobra.Command{
-		Use:   "command",
-		Short: "Generate a custom command scaffold",
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Generating custom command scaffold...")
-			// 自定义 command 生成逻辑
 		},
 	}
 
@@ -90,11 +80,10 @@ func main() {
 	}
 
 	// 组装子命令结构
-	genCmd.AddCommand(genModelCmd, genHandlerCmd, genServiceCmd)
-	makeCmd.AddCommand(makeCommandCmd)
+	genCmd.AddCommand(genModelCmd, genCtrlCmd, genServiceCmd)
 	dbCmd.AddCommand(migrateCmd)
 
-	rootCmd.AddCommand(runCmd, genCmd, makeCmd, dbCmd)
+	rootCmd.AddCommand(runCmd, genCmd, dbCmd)
 
 	// 执行命令
 	if err := rootCmd.Execute(); err != nil {
