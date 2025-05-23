@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/cozyo/gs/dispatcher"
+	"github.com/cozyo/gs/internal/dispatcher"
 	"os"
 
 	"github.com/spf13/cobra"
